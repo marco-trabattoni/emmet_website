@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="white">
+
+  <title>emmet first tee</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+  <img class="logo" src="Resources/immagini/logo.png">
+  <img class="tee" id="tee" src="Resources/immagini/1.png">
+
+  <div id="testi">
+    <div class="right-text">1 of 10</div>
+    <div class="cta" id="cta">Pre-order</div>
+  </div>
+
+  <form action="https://formspree.io/f/mrbqnvlo" method="POST" id="form">
+    <div id="exit" onclick="esci()"></div>
+
+    <div id="first-step">
+    <input type="email" id="email-input" name="email" placeholder="E-mail"   onfocus="scrollEmailIntoView()" required>
+    <div class="note">
+      No spam.<br>You'll receive 1 e-mail with the link to purchase the tee<br>24h. before the drop.
+    </div>
+    <div id="next" class="button" onclick="secondStep()">Next</div>
+    </div>
+
+    <input type="hidden" name="taglia" id="taglia-input" required>
+
+    <div id="second-step">
+      <div class="titlino">Size</div>
+      <div class="sizes">
+        <div class="bottons" data-size="M">M</div>
+        <div class="bottons" data-size="L">L</div>
+        <div class="bottons" data-size="XL">XL</div>
+      </div>
+      <button id="button" class="button" type="submit">Pre-order</button>
+    </div>
+
+  </form>
+
+  <div id="messaggio-conferma" style="display: none;"><div class="messaggio-conferma">Thank you!</div></div>
+</body>
+
+
+<script src="script.js"></script>
+
+</html>
