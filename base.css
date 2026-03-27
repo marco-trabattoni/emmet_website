@@ -96,7 +96,7 @@ form {
   width: 24%;
   height: 18vh;
 
-  transition: 0.7s;
+  transition: 0.4s;
   cursor: pointer;
 }
 
@@ -146,7 +146,7 @@ input:focus {
 
 
 #second-step {
-  transition: 0.7s;
+  transition: 0.4s;
   opacity: 0;
   pointer-events: none;
 
@@ -230,10 +230,10 @@ input:focus {
 
 #messaggio-conferma {
   position: fixed;
-  bottom: 0;
+  top: -20vh;
   right: 0;
   width: 100vw;
-  height: 100vh;
+  height: 160vh;
   background-color: yellow;
   z-index: 2;
 }
@@ -433,7 +433,7 @@ body {
   
   .messaggio-conferma {
     position: fixed;
-    bottom: 42vh;
+    bottom: 40vh;
     right: 50vw;
     transform: translateX(50%) translateY(50%);
 

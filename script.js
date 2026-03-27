@@ -81,16 +81,14 @@ cta.addEventListener("click", cambiaStile);
 emailInput.addEventListener("input", aggiornaStatoSubmit);
 emailInput.addEventListener("blur", aggiornaStatoSubmit);
 
-/* se da mobile premono il tasto blu della tastiera, NON deve submitare il form */
 emailInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
         e.preventDefault();
 
-        if (emailInput.checkValidity() && emailInput.value.trim() !== "") {
-            submitta();
-        } else {
-            emailInput.reportValidity();
-        }
+        requestAnimationFrame(() => {
+            emailInput.blur();
+            aggiornaStatoSubmit();
+        });
     }
 });
 
