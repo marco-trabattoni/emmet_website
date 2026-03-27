@@ -23,28 +23,31 @@
     <div id="exit" onclick="esci()"></div>
 
     <div id="first-step">
-    <input type="email" id="email-input" name="email" placeholder="E-mail"   onfocus="scrollEmailIntoView()" required>
-    <div class="note">
-      No spam.<br>You'll receive 1 e-mail with the link to purchase the tee<br>24h. before the drop.
-    </div>
-    <div id="next" class="button" onclick="secondStep()">Next</div>
-    </div>
-
-    <input type="hidden" name="taglia" id="taglia-input" required>
-
-    <div id="second-step">
       <div class="titlino">Size</div>
       <div class="sizes">
         <div class="bottons" data-size="M">M</div>
         <div class="bottons" data-size="L">L</div>
         <div class="bottons" data-size="XL">XL</div>
       </div>
+
+    <div id="next" class="button" onclick="secondStep()">Next</div>
+    </div>
+
+    <input type="hidden" name="taglia" id="taglia-input" required>
+
+    <div id="second-step">
+
+    <input type="email" id="email-input" name="email" placeholder="E-mail"   onfocus="scrollEmailIntoView()" required>
+    <div class="note">
+      No spam.<br>You'll receive 1 e-mail with the link to purchase the tee<br>24h. before the drop.
+    </div>
+
       <button id="button" class="button" type="submit">Pre-order</button>
     </div>
 
   </form>
 
-  <div id="messaggio-conferma" style="display: none;"><div class="messaggio-conferma">Thank you!</div></div>
+  <div id="messaggio-conferma" style="display: none;"><div class="messaggio-conferma">Received.</div></div>
 </body>
 
 
