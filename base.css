@@ -513,7 +513,7 @@ body {
   
   .messaggio-conferma {
     position: fixed;
-    bottom: 40vh;
+    bottom: 48vh;
     right: 50vw;
     transform: translateX(50%) translateY(50%);
 

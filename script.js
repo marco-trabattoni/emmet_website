@@ -174,7 +174,7 @@ currentStep = 1;
 }
 
 
-let tee = "andy";
+let tee = "Andy";
 
 
 form.addEventListener("submit", submitta);
@@ -209,6 +209,7 @@ async function submitta(e) {
         if (response.ok) {
             form.style.display = "none";
             messaggioConferma.style.display = "block";
+            messaggioConferma.innerHTML = "Thank you for preordering the " + tee + " tee. You’ll receive an email with a purchase link 24 hours before the drop.";
 
             let metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
@@ -259,12 +260,12 @@ async function submitta(e) {
       if (diff > 50 && currentIndex < 1) {
         currentIndex++;
         document.getElementById("tee-number").innerHTML = "1 of 10";
-        tee = "penny";
+        tee = "Penny";
         console.log(tee);
       } else if (diff < -50 && currentIndex > 0) {
         currentIndex--;
         document.getElementById("tee-number").innerHTML = "2 of 10";
-        tee = "andy";
+        tee = "Andy";
         console.log(tee);
       }
 
@@ -288,13 +289,13 @@ if (window.innerWidth > 768) {
       if (entry.isIntersecting) {
         if (entry.target.id === "tee-one") {
           scriviValore(1);
-          tee = "penny";
+          tee = "Penny";
           console.log(tee);
         }
 
         if (entry.target.id === "tee-two") {
           scriviValore(2);
-          tee = "andy";
+          tee = "Andy";
           console.log(tee);
         }
       }
