@@ -174,6 +174,8 @@ currentStep = 1;
 }
 
 
+let tee = "andy";
+
 
 form.addEventListener("submit", submitta);
 
@@ -193,6 +195,7 @@ async function submitta(e) {
     */
 
     const formData = new FormData(form);
+    formData.set("tee", tee);
 
     try {
         const response = await fetch("https://formspree.io/f/mrbqnvlo", {
@@ -223,3 +226,87 @@ async function submitta(e) {
         alert("Si è verificato un errore. Riprova.");
     }
 }
+    
+
+
+    const carousel = document.getElementById("carousel");
+    const track = document.getElementById("carouselTrack");
+    const dots = document.querySelectorAll(".dot");
+
+    let currentIndex = 0;
+    let startX = 0;
+    let endX = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentIndex);
+      });
+    }
+
+    carousel.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener("touchmove", (e) => {
+      endX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener("touchend", () => {
+      const diff = startX - endX;
+
+      if (diff > 50 && currentIndex < 1) {
+        currentIndex++;
+        document.getElementById("tee-number").innerHTML = "1 of 10";
+        tee = "penny";
+        console.log(tee);
+      } else if (diff < -50 && currentIndex > 0) {
+        currentIndex--;
+        document.getElementById("tee-number").innerHTML = "2 of 10";
+        tee = "andy";
+        console.log(tee);
+      }
+
+      updateCarousel();
+      startX = 0;
+      endX = 0;
+    });
+
+
+
+
+function scriviValore(valore) {
+  document.getElementById("tee-number").textContent = valore + " of 10";
+}
+
+if (window.innerWidth > 768) {
+  let tee = "";
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        if (entry.target.id === "tee-one") {
+          scriviValore(1);
+          tee = "penny";
+          console.log(tee);
+        }
+
+        if (entry.target.id === "tee-two") {
+          scriviValore(2);
+          tee = "andy";
+          console.log(tee);
+        }
+      }
+    });
+  }, {
+    threshold: 0.6
+  });
+
+  observer.observe(document.getElementById("tee-one"));
+  observer.observe(document.getElementById("tee-two"));
+}
+
+
+
+
