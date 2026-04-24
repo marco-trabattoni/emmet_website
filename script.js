@@ -160,7 +160,7 @@ currentStep = 1;
     nextButton.style.pointerEvents = "none";
     nextButton.style.opacity = "0.3";
 
-    emailInput.style.pointerEvents = "auto";
+    emailInput.style.pointerEvents = "none";
     firstStep.style.opacity = "1";
 
     secondStepBox.style.opacity = "0";
