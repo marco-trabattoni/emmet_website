@@ -1,0 +1,227 @@
+@font-face {
+  font-family: 'emmet';
+  src: url('Resources/AlteHaasGroteskRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+body,
+html {
+  font-family: 'emmet', 'helvetica', sans-serif;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  font-size: 12px;
+  position: relative;
+  margin: 0;
+}
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+  .logo {
+    position: fixed;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;
+    z-index: 5;
+  }
+
+  .carousel {
+    position: fixed;
+    top: 46%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    
+    margin: auto;
+    overflow: hidden;
+    overflow-y: hidden;
+    touch-action: pan-y;
+    height: auto;
+  }
+
+  .carousel-track {
+    display: flex;
+    flex-direction: initial;
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+
+  .carousel-slide {
+    width: 100vw;
+    user-select: none;
+    -webkit-user-drag: none;
+
+    height: auto;
+        padding-left: 5vw;
+  }
+
+  .carousel-slide img {
+    display: block;
+    width: 80vw;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+    position: initial;
+    transform: none;
+  }
+
+
+
+
+
+  #testi {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 96px;
+    text-align: center;
+
+    transition: 0.4s;
+    animation-timing-function: ease-in;
+  }
+
+
+  #cta {
+    all: unset;
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: fixed;
+    bottom: 8px;
+    left: 8px;
+    padding: 27px 0px;
+    width: calc(100vw - 16px);
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+
+  }
+
+  #caption {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    opacity: 0.3;
+  }
+
+
+
+  #sizes {
+    position: fixed;
+    bottom: 152px;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    transition: 0.3s;
+    animation-timing-function: ease-in;
+    z-index: 1;
+  }
+
+  .bottons {
+    padding: 27px 0px;
+    width: 72px;
+    text-align: center;
+    background-color: #EBEBEB;
+    color: rgb(1, 1, 1);
+    border-radius: 8px;
+  }
+
+  .bottons[data-size="M"] {
+  border: 1px dotted black;
+}
+
+  #size-selected {
+    position: fixed;
+    bottom: 8px;
+    right: 8px;
+    transition: 0.36s;
+    animation-timing-function: ease-in;
+  }
+
+
+  #email-container {
+    position: fixed;
+    bottom: 8px;
+    left: 8px;
+    transition: 0.36s;
+    animation-timing-function: ease-in;
+  }
+
+  #note {
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+    font-size: 10px;
+    opacity: 0.3;
+  }
+
+  #email-input {
+    background-color: #EBEBEB;
+    width: calc(100vw - 93px);
+    padding: 27px 20px;
+
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid rgb(255, 0, 0, 0.0);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 12px;
+    transition: 0.2s;
+  }
+
+  #email-input.error {
+    border: 1px solid rgb(255, 0, 0, 1);
+}
+
+
+  input:focus {
+    border: none;
+    outline: none;
+    background-color: #EBEBEB;
+  }
+
+
+
+  #warning {
+    opacity: 0.3;
+  }
+
+  #price {}
+
+  #exit {
+    width: 100vw;
+    height: calc(100vh - 160px);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    display: none;
+  }
+
+
+
+  #messaggio-conferma {
+    position: fixed;
+    width: 100vw;
+    bottom: 32px;
+    left: 0px;
+    text-align: center;
+  }
+
+
+}

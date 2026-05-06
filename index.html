@@ -6,61 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="white">
 
-  <title>emmet first tee</title>
+  <title>emmet</title>
   <link rel="stylesheet" href="base.css">
 </head>
 
 <body>
-  <img class="logo" src="Resources/immagini/logo.png">
+  <a href="index.html"><img class="logo" src="Resources/logo.svg"></a>
 
-    <div class="carousel" id="carousel">
-    <div class="carousel-track" id="carouselTrack">
-      <div id="tee-two" class="carousel-slide">
-         <img src="Resources/immagini/2.png">
-      </div>
-      <div id="tee-one" class="carousel-slide">
-        <img src="Resources/immagini/1.png">
-      </div>
-    </div>
-    </div>
+  <div class="image-flex">
+      <a href="penny.html">
+          <img src="Resources/1.webp">
+      </a>
+      <a href="andy.html">
+          <img src="Resources/2.webp">
+      </a>
+            <a href="ben.html">
+          <img src="Resources/3.webp">
+      </a>
+</div>
 
-  <div id="testi">
-    <div class="right-text" id="tee-number">2 of 10</div>
-    <div class="cta" id="cta">Pre-order</div>
-  </div>
-
-  <form action="https://formspree.io/f/mrbqnvlo" method="POST" id="form">
-    <div id="exit" onclick="esci()"></div>
-
-    <div id="first-step">
-      <div class="titlino">Size</div>
-      <div class="sizes">
-        <div class="bottons" data-size="M">M</div>
-        <div class="bottons" data-size="L">L</div>
-        <div class="bottons" data-size="XL">XL</div>
-      </div>
-
-    <div id="next" class="button" onclick="secondStep()">Next</div>
-    </div>
-
-    <input type="hidden" name="taglia" id="taglia-input" required>
-
-    <div id="second-step">
-
-    <input type="email" id="email-input" name="email" placeholder="E-mail"   onfocus="scrollEmailIntoView()" required>
-    <div class="note">
-      No spam.<br>You'll receive 1 e-mail with the link to purchase the tee<br>24h. before the drop.
-    </div>
-
-      <button id="button" class="button" type="submit">Pre-order</button>
-    </div>
-
-  </form>
-
-  <div id="messaggio-conferma" style="display: none;"><div class="messaggio-conferma">Received.</div></div>
 </body>
 
 
-<script src="script.js"></script>
+
 
 </html>
