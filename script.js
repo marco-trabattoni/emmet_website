@@ -20,34 +20,22 @@ carousel.addEventListener("touchmove", (e) => {
 
 carousel.addEventListener("touchend", () => {
   const diff = startX - endX;
-
-  if (diff > 50 && currentIndex < slides.length - 1) {
-    currentIndex++;
-  }
-
-  if (diff < -50 && currentIndex > 0) {
-    currentIndex--;
-  }
-
+  if (diff > 50 && currentIndex < slides.length - 1) currentIndex++;
+  if (diff < -50 && currentIndex > 0) currentIndex--;
   updateCarousel();
-
   startX = 0;
   endX = 0;
 });
 
 
-
 const form = document.getElementById("form");
 const cta = document.getElementById("cta");
-
 const emailContainer = document.getElementById("email-container");
 const emailInput = document.getElementById("email-input");
 const sizeContainer = document.getElementById("size-selected");
 const sizeSelected = document.getElementById("size-selected-size");
-
 const sizes = document.getElementById("sizes");
 const bottonSizes = document.querySelectorAll("#sizes .bottons");
-
 const testi = document.getElementById("testi");
 const exit = document.getElementById("exit");
 const messaggioConferma = document.getElementById("messaggio-conferma");
@@ -56,6 +44,25 @@ const pageName = window.location.pathname.split("/").pop().replace(".html", "");
 const tee = pageName.charAt(0).toUpperCase() + pageName.slice(1);
 
 let formUnlocked = false;
+let inputFocused = false;
+let currentSize = "M";
+
+
+emailInput.addEventListener("focus", () => {
+  inputFocused = true;
+});
+
+// Unico listener blur: gestisce sia il flag che il reflow
+emailInput.addEventListener("blur", () => {
+  setTimeout(() => {
+    inputFocused = false;
+    window.scrollTo(0, 0);
+    document.documentElement.style.height = "100%";
+    document.body.style.height = "100%";
+    document.body.offsetHeight;
+  }, 300);
+});
+
 
 async function submitta(e) {
   e.preventDefault();
@@ -74,16 +81,16 @@ async function submitta(e) {
     const response = await fetch("https://formspree.io/f/mrbqnvlo", {
       method: "POST",
       body: formData,
-      headers: {
-        Accept: "application/json"
-      }
+      headers: { Accept: "application/json" }
     });
 
     if (response.ok) {
       form.style.display = "none";
       messaggioConferma.style.display = "block";
       messaggioConferma.innerHTML =
-        "Thank you for preordering the " + tee + " tee in size " + currentSize + ".<br>You'll receive a purchase link at <span style='border-bottom: 1px solid black;'>" + emailInput.value + "</span><br>when it's ready.";
+        "Thank you for preordering the " + tee + " tee in size " + currentSize +
+        ".<br>You'll receive a purchase link at <span style='border-bottom: 1px solid black;'>" +
+        emailInput.value + "</span><br>when it's ready.";
 
       let metaThemeColor = document.querySelector('meta[name="theme-color"]');
       if (!metaThemeColor) {
@@ -103,7 +110,6 @@ async function submitta(e) {
 function showOptions(e) {
   e.preventDefault();
 
-  // Form non ancora aperto: aprilo
   if (emailContainer.style.bottom !== "80px") {
     exit.style.display = "block";
     emailContainer.style.bottom = "80px";
@@ -112,7 +118,6 @@ function showOptions(e) {
     return;
   }
 
-  // Form aperto: valida email prima di sbloccare e inviare
   if (!emailInput.checkValidity() || emailInput.value.trim() === "") {
     emailInput.classList.add("error");
     setTimeout(() => emailInput.classList.remove("error"), 400);
@@ -132,22 +137,13 @@ function showSizes() {
 sizeContainer.addEventListener("click", showSizes);
 
 
-let currentSize = "M";
-
 bottonSizes.forEach((button) => {
   button.addEventListener("click", () => {
     const size = button.dataset.size;
-
-    bottonSizes[0].style.border = "none";
-    bottonSizes[1].style.border = "none";
-    bottonSizes[2].style.border = "none";
-
+    bottonSizes.forEach(b => b.style.border = "none");
     button.style.border = "1px dotted black";
-
     currentSize = size;
-
-    sizeSelected.innerHTML = `${size}`;
-
+    sizeSelected.innerHTML = size;
     sizes.style.right = "-100%";
   });
 });
@@ -162,14 +158,18 @@ function unShowOptions() {
   formUnlocked = false;
 }
 
-exit.addEventListener("click", unShowOptions);
+// Unico listener exit
+exit.addEventListener("click", (e) => {
+  if (
+    e.target.closest("#email-container") ||
+    e.target.closest("#sizes") ||
+    e.target.closest("#size-selected")
+  ) return;
 
+  if (inputFocused) {
+    inputFocused = false;
+    return;
+  }
 
-emailInput.addEventListener("blur", () => {
-  setTimeout(() => {
-    window.scrollTo(0, 0);
-    document.documentElement.style.height = "100%";
-    document.body.style.height = "100%";
-    document.body.offsetHeight; // forza reflow
-  }, 300);
+  unShowOptions();
 });
