@@ -33,7 +33,7 @@ body {
 
 .image-flex {
   position: absolute;
-  top: 50svh;
+  top: 52svh;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -43,7 +43,7 @@ body {
 }
 
 .image-flex img {
-  width: 28vw;
+  width: 36vw;
   height: auto;
   display: block;
 }
