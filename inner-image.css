@@ -105,6 +105,7 @@ html {
     color: white;
     border-radius: 8px;
     text-align: center;
+            z-index: 3;
 
   }
 
@@ -129,7 +130,7 @@ html {
     align-items: center;
     transition: 0.3s;
     animation-timing-function: ease-in;
-    z-index: 1;
+    z-index: 2;
   }
 
   .bottons {
@@ -139,6 +140,7 @@ html {
     background-color: #EBEBEB;
     color: rgb(1, 1, 1);
     border-radius: 8px;
+        z-index: 2;
   }
 
   .bottons[data-size="M"] {
@@ -160,6 +162,7 @@ html {
     left: 8px;
     transition: 0.36s;
     animation-timing-function: ease-in;
+        z-index: 2;
   }
 
   #note {
@@ -205,7 +208,7 @@ html {
 
   #exit {
     width: 100vw;
-    height: calc(100vh - 240px);
+    height: calc(100vh - 120px);
     position: fixed;
     top: 0px;
     left: 0px;
