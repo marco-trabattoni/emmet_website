@@ -163,3 +163,13 @@ function unShowOptions() {
 }
 
 exit.addEventListener("click", unShowOptions);
+
+
+emailInput.addEventListener("blur", () => {
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.style.height = "100%";
+    document.body.style.height = "100%";
+    document.body.offsetHeight; // forza reflow
+  }, 300);
+});
