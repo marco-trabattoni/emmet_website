@@ -43,8 +43,7 @@ body {
 }
 
 .image-flex img {
-  width: 40vw;
-  max-width: 400px;
+  width: 32vw;
   height: auto;
   display: block;
 }
