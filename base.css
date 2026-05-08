@@ -27,7 +27,7 @@ body {
   top: 3%;
   left: 50%;
   transform: translateX(-50%);
-  width: 32vw;
+  width: 36vw;
   z-index: 5;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 .image-flex img {
-  width: 36vw;
+  width: 40vw;
   height: auto;
   display: block;
 }

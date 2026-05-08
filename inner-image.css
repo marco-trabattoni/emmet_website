@@ -97,7 +97,7 @@ html {
     -webkit-appearance: none;
 
     position: fixed;
-    bottom: 8px;
+    bottom: 0px;
     left: 8px;
     padding: 27px 0px;
     width: calc(100vw - 16px);
@@ -105,8 +105,8 @@ html {
     color: white;
     border-radius: 8px;
     text-align: center;
-            z-index: 3;
-
+    
+    z-index: 3;
   }
 
   #caption {
@@ -176,7 +176,7 @@ html {
   #email-input {
     background-color: #EBEBEB;
     width: calc(100vw - 93px);
-    padding: 27px 20px;
+    padding: 26px 20px;
 
     appearance: none;
     -webkit-appearance: none;
