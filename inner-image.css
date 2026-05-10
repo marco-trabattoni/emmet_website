@@ -33,6 +33,9 @@ html {
     left: 0;
     transform: translateY(-50%);
     width: 100%;
+
+    transition: 0.4s;
+    animation-timing-function: ease-in;
     
     margin: auto;
     overflow: hidden;
