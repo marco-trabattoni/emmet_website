@@ -115,6 +115,7 @@ function showOptions(e) {
     emailContainer.style.bottom = "80px";
     sizeContainer.style.bottom = "80px";
     testi.style.bottom = "160px";
+    carousel.style.top = "40%";
     return;
   }
 
@@ -155,6 +156,7 @@ function unShowOptions() {
   sizeContainer.style.bottom = "-100%";
   testi.style.bottom = "96px";
   exit.style.display = "none";
+  carousel.style.top = "46%";
   formUnlocked = false;
 }
 
