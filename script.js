@@ -115,7 +115,7 @@ function showOptions(e) {
     emailContainer.style.bottom = "80px";
     sizeContainer.style.bottom = "80px";
     testi.style.bottom = "160px";
-    carousel.style.top = "40%";
+    carousel.style.top = "39%";
     return;
   }
 
