@@ -97,7 +97,7 @@ html {
     -webkit-appearance: none;
 
     position: fixed;
-    bottom: 2px;
+    bottom: 6px;
     left: 8px;
     padding: 27px 0px;
     width: calc(100vw - 16px);
