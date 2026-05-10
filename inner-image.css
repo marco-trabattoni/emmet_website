@@ -26,14 +26,6 @@ html {
 
 
 @media (max-width: 767px) {
-  .logo {
-    position: fixed;
-    top: 3%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30vw;
-    z-index: 5;
-  }
 
   .carousel {
     position: fixed;
